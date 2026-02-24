@@ -2,6 +2,7 @@ import { Button } from "./ui/button";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import logo from "../../assets/logo.svg";   //logo 
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,35 +13,38 @@ export function Navigation() {
 
         {/* Top Bar */}
         <div className="flex items-center justify-between h-16">
-          <span className="text-2xl text-green-600 font-bold">
-            Bulldroid
-          </span>
+
+          {/* LOGO + COMPANY NAME */}
+          <Link to="/" className="flex items-center gap-3">
+            <img
+              src={logo}
+              alt="Bulldroid Logo"
+              className="h-10 w-auto"
+            />
+
+            <div className="leading-tight">
+              <p className="text-lg font-bold text-green-700">
+                BULLDROID
+              </p>
+              <p className="text-xs text-gray-600">
+                AGRI ROBOTICS PVT LTD
+              </p>
+            </div>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            <Link to="/" className="text-gray-700 hover:text-green-600">
-              Home
-            </Link>
+            <Link to="/" className="hover:text-green-600">Home</Link>
+            <Link to="/services" className="hover:text-green-600">Products</Link>
+            <Link to="/services" className="hover:text-green-600">Technology</Link>
+            <Link to="/about" className="hover:text-green-600">About Us</Link>
+            <Link to="/contact" className="hover:text-green-600">Contact</Link>
 
-            <Link to="/services" className="text-gray-700 hover:text-green-600">
-              Products
+            <Link to="/contact">
+              <Button className="bg-green-600 hover:bg-green-700">
+                Request Demo
+              </Button>
             </Link>
-
-            <Link to="/services" className="text-gray-700 hover:text-green-600">
-              Technology
-            </Link>
-
-            <Link to="/about" className="text-gray-700 hover:text-green-600">
-              About Us
-            </Link>
-
-            <Link to="/contact" className="text-gray-700 hover:text-green-600">
-              Contact
-            </Link>
-
-            <Button className="bg-green-600 hover:bg-green-700">
-              Request Demo
-            </Button>
           </div>
 
           {/* Mobile Button */}
