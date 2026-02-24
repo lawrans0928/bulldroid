@@ -77,7 +77,7 @@ export function CTA() {
 
             <iframe
               title="Bulldroid Location"
-              src="https://www.google.com/maps?q=Chennai&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              src="https://www.google.com/maps?q=Alagappa%20Incubation%20Forum%20Karaikudi&t=&z=15&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="320"
               style={{ border: 0 }}
