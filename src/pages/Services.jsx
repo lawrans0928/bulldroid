@@ -8,7 +8,7 @@ export default function Services() {
     <>
       <Navigation />
       <Products />
-      <Technology />
+      {/* <Technology /> */}
       <Footer />
     </>
   );

@@ -8,6 +8,7 @@
     "dev": "vite"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@emotion/react": "11.14.0",
     "@emotion/styled": "11.14.1",
     "@mui/icons-material": "7.3.5",
@@ -88,5 +89,18 @@
     "overrides": {
       "vite": "6.3.5"
     }
-  }
+  },
+  "description": "This is a code bundle for Agriculture Robot Website. The original project is available at https://www.figma.com/design/WzUdIXFv6d661MMdIbpTLv/Agriculture-Robot-Website.",
+  "main": "tailwind.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lawrans0928/agri_website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lawrans0928/agri_website/issues"
+  },
+  "homepage": "https://github.com/lawrans0928/agri_website#readme"
 }

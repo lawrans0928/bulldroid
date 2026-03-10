@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <Navigation />
       <Hero />
-      <CTA />
+      {/* <CTA /> */}
       <Footer />
     </>
   );

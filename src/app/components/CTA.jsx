@@ -2,8 +2,11 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Mail, Phone, User } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function CTA() {
+  const navigate = useNavigate();
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -11,19 +14,36 @@ export function CTA() {
     message: ""
   });
 
-  const handleChange = (e: any) => {
+  const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
-    if (!form.name || !form.email) {
-      alert("Please enter Name and Email");
-      return;
-    }
+ // admin logic here 
+ const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    alert("Thanks! Bulldroid team will contact you soon.");
-    console.log(form);
-  };
+  const res = await fetch("http://localhost:5000/api/contact", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(form)
+  });
+
+  const data = await res.json();
+
+  console.log(data); // debugging
+
+  if (data.status === "admin") {
+    navigate("/dashboard");
+    return;
+  }
+
+  if (data.status === "success") {
+    alert("Message sent successfully");
+    setForm({ name: "", email: "", phone: "", message: "" });
+  }
+};
 
   return (
     <section className="py-24 bg-gray-50">
@@ -36,27 +56,27 @@ export function CTA() {
 
         <div className="grid md:grid-cols-2 gap-10">
 
-          {/* CONTACT FORM */}
           <div className="space-y-4">
 
             <div className="flex items-center gap-2">
               <User className="w-5 h-5" />
-              <Input name="name" placeholder="Your Name" onChange={handleChange}/>
+              <Input name="name" placeholder="Your Name" value={form.name} onChange={handleChange}/>
             </div>
 
             <div className="flex items-center gap-2">
               <Mail className="w-5 h-5" />
-              <Input name="email" placeholder="Email" onChange={handleChange}/>
+              <Input name="email" placeholder="Email" value={form.email} onChange={handleChange}/>
             </div>
 
             <div className="flex items-center gap-2">
               <Phone className="w-5 h-5" />
-              <Input name="phone" placeholder="Phone Number" onChange={handleChange}/>
+              <Input name="phone" placeholder="Phone Number" value={form.phone} onChange={handleChange}/>
             </div>
 
             <textarea
               name="message"
               placeholder="Your Questions..."
+              value={form.message}
               onChange={handleChange}
               className="w-full border rounded-lg p-3 h-32"
             />
@@ -65,13 +85,8 @@ export function CTA() {
               Send Message
             </Button>
 
-            <p className="text-sm text-gray-500">
-              Email: ceo@bulldroid.in
-            </p>
-
           </div>
 
-          {/* GOOGLE MAP */}
           <div>
             <h3 className="text-xl mb-3">Our Location</h3>
 
@@ -88,7 +103,6 @@ export function CTA() {
           </div>
 
         </div>
-
       </div>
     </section>
   );
