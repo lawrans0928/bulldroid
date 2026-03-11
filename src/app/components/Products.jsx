@@ -2,10 +2,13 @@ import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 function HoverBox({ title, children }) {
   return (
-    <div className="group border border-gray-200 rounded-xl p-5 sm:p-6 transition hover:shadow-lg">
+    <div
+      tabIndex={0}
+      className="group border border-gray-200 rounded-xl p-5 sm:p-6 transition hover:shadow-lg focus:outline-none"
+    >
       <div className="flex items-center gap-3">
-        <svg // Arrow Icon
-          className="w-5 h-5 text-red-500 transition-transform duration-300 group-hover:rotate-90"
+        <svg
+          className="w-5 h-5 text-red-500 transition-transform duration-300 group-hover:rotate-90 group-focus-within:rotate-90"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
@@ -17,7 +20,23 @@ function HoverBox({ title, children }) {
         <h4 className="text-lg sm:text-xl font-semibold">{title}</h4>
       </div>
 
-      <div className="overflow-hidden max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 mt-0 group-hover:mt-4">
+      <div
+        className="
+        overflow-hidden
+        max-h-0
+        opacity-0
+        transition-all duration-500
+        mt-0
+
+        group-hover:max-h-40
+        group-hover:opacity-100
+        group-hover:mt-4
+
+        group-focus-within:max-h-40
+        group-focus-within:opacity-100
+        group-focus-within:mt-4
+        "
+      >
         <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
           {children}
         </p>
@@ -25,7 +44,6 @@ function HoverBox({ title, children }) {
     </div>
   );
 }
-
 export function Products() {
   return (
     <section className="py-16 sm:py-24 bg-white">
