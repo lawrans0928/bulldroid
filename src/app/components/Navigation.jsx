@@ -2,10 +2,13 @@ import { Button } from "./ui/button";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo.svg";   //logo 
+import logo from "../../assets/logo.svg";
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navItem =
+    "relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-red-600 after:transition-all after:duration-300 hover:after:w-full hover:text-green-700";
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
@@ -14,7 +17,7 @@ export function Navigation() {
         {/* Top Bar */}
         <div className="flex items-center justify-between h-16">
 
-          {/* LOGO + COMPANY NAME */}
+          {/* LOGO */}
           <Link to="/" className="flex items-center gap-3">
             <img
               src={logo}
@@ -23,7 +26,7 @@ export function Navigation() {
             />
 
             <div className="leading-tight">
-              <p className="text-lg font-bold text-green-700">
+              <p className="text-lg font-bold text-red-500 hover:text-green-700">
                 BULLDROID
               </p>
               <p className="text-xs text-gray-600">
@@ -34,36 +37,71 @@ export function Navigation() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            <Link to="/" className="hover:text-green-600">Home</Link>
-            <Link to="/services" className="hover:text-green-600">Products</Link>
-            <Link to="/services" className="hover:text-green-600">Technology</Link>
-            <Link to="/about" className="hover:text-green-600">About Us</Link>
-            <Link to="/contact" className="hover:text-green-600">Contact</Link>
+
+            <Link to="/" className={navItem}>
+              Home
+            </Link>
+
+            <Link to="/services" className={navItem}>
+              Products
+            </Link>
+
+            {/* <Link to="/services" className={navItem}>
+              Technology
+            </Link> */}
+
+            <Link to="/about" className={navItem}>
+              About Us
+            </Link>
+
+            <Link to="/contact" className={navItem}>
+              Contact
+            </Link>
 
             <Link to="/contact">
-              <Button className="bg-green-600 hover:bg-green-700">
+              <Button className="bg-red-600 hover:bg-green-700">
                 Request Demo
               </Button>
             </Link>
+
           </div>
 
           {/* Mobile Button */}
           <button
-            className="md:hidden"
+            className={`md:hidden p-2 rounded-md transition ${
+              isMenuOpen ? "bg-red-600 text-white" : "bg-transparent"
+            }`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <Menu className="h-6 w-6" />
           </button>
+
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t flex flex-col gap-4">
-            <Link to="/" onClick={()=>setIsMenuOpen(false)}>Home</Link>
-            <Link to="/services" onClick={()=>setIsMenuOpen(false)}>Products</Link>
-            <Link to="/services" onClick={()=>setIsMenuOpen(false)}>Technology</Link>
-            <Link to="/about" onClick={()=>setIsMenuOpen(false)}>About Us</Link>
-            <Link to="/contact" onClick={()=>setIsMenuOpen(false)}>Contact</Link>
+
+            <Link to="/" onClick={() => setIsMenuOpen(false)}>
+              Home
+            </Link>
+
+            <Link to="/services" onClick={() => setIsMenuOpen(false)}>
+              Products
+            </Link>
+
+            {/* <Link to="/services" onClick={() => setIsMenuOpen(false)}>
+              Technology
+            </Link> */}
+
+            <Link to="/about" onClick={() => setIsMenuOpen(false)}>
+              About Us
+            </Link>
+
+            <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
+              Contact
+            </Link>
+
           </div>
         )}
 
