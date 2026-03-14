@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "../../tailwind.css";
-
+// import "../../index.css";
+import Application from "./Application";
 import Home  from "../../pages/Home";
 import About from "../../pages/About";
 import  Contact  from "../../pages/Contact";
@@ -18,7 +19,8 @@ export default function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/contact" element={<Contact />} />
-       <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/application" element={<Application />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );

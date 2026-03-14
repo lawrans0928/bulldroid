@@ -38,12 +38,12 @@ app.post("/api/contact", (req, res) => {
   const emailInput = (email || "").trim().toLowerCase();
   const phoneInput = (phone || "").trim();
 
-  // ADMIN LOGIN CHECK FIRST → DO NOT STORE
+  // ADMIN LOGIN CHECK FIRST
   if (emailInput === ADMIN_EMAIL && phoneInput === ADMIN_PASS) {
     return res.json({ status: "admin" });
   }
 
-  // NORMAL USER → SAVE TO DATABASE
+  // SAVE CONTACT MESSAGE
   const sql =
     "INSERT INTO contacts (name,email,phone,message) VALUES (?,?,?,?)";
 
@@ -81,9 +81,32 @@ app.get("/api/contacts", (req, res) => {
 });
 
 
+/* DELETE CONTACT MESSAGE */
+
+app.delete("/api/contacts/:id", (req, res) => {
+
+  const id = req.params.id;
+
+  const sql = "DELETE FROM contacts WHERE id = ?";
+
+  db.query(sql, [id], (err) => {
+
+    if (err) {
+      console.log(err);
+      return res.status(500).json({ status: "error" });
+    }
+
+    res.json({ status: "deleted" });
+
+  });
+
+});
+
+
 /* START SERVER */
 
 const port = process.env.PORT || 5000;
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });

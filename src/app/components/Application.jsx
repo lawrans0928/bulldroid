@@ -108,10 +108,10 @@ export default function Application() {
                 {/* NEW: dropdown options */}
                 <option value="">Select Role</option>
                 <option value="Robotics Engineer">Robotics Engineer</option>
-                <option value="AI Developer">AI Developer</option>
+                {/* <option value="AI Developer"></option> */}
                 <option value="Mechanical Designer">Mechanical Designer</option>
                 <option value="Embedded Systems Engineer">
-                  Embedded Systems Engineer
+                  Product Development Engineer
                 </option>
                 <option value="Intern">Intern</option>
               </select>

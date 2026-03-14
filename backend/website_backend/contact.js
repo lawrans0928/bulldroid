@@ -44,4 +44,26 @@ router.get("/contacts", (req, res) => {
 
 });
 
+
+/* DELETE CONTACT */
+
+router.delete("/contacts/:id", (req, res) => {
+
+  const id = req.params.id;
+
+  const sql = "DELETE FROM contacts WHERE id = ?";
+
+  db.query(sql, [id], (err, result) => {
+
+    if (err) {
+      console.log(err);
+      return res.status(500).json({ status: "error" });
+    }
+
+    res.json({ status: "deleted" });
+
+  });
+
+});
+
 module.exports = router;
