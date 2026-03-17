@@ -4,16 +4,15 @@ import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 export function Hero() {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const [showVideo, setShowVideo] = useState(false);
 
   return (
     <section className="relative min-h-screen flex items-center">
-
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        <ImageWithFallback
-          src="src/assets/website-bg.jpg"
+        <img
+          src="/website-bgro.png"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/50" />
@@ -27,14 +26,21 @@ export function Hero() {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-200 mb-8">
-          Bulldroid is building affordable robots that help farmers automate repetitive farming tasks such as seed broadcasting, fertilizer spreading, and pesticide spraying.
+            Bulldroid is building affordable robots that help farmers automate
+            repetitive farming tasks such as seed broadcasting, fertilizer
+            spreading, and pesticide spraying.
           </p>
 
           <div className="flex gap-4">
-            <Button size="lg" style={{padding:"10px"}} className="bg-red-600 hover:bg-red -700" onClick={() => navigate("/services")}>
+            <Button
+              size="lg"
+              style={{ padding: "10px" }}
+              className="bg-red-600 hover:bg-red -700"
+              onClick={() => navigate("/services")}
+            >
               Products
               <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+            </Button>
           </div>
         </div>
       </div>
@@ -64,7 +70,6 @@ export function Hero() {
           </div>
         </div> */}
       {/* )} */}
-
     </section>
   );
 }
