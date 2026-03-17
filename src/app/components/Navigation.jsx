@@ -1,7 +1,7 @@
 import { Button } from "./ui/button";
 import { Menu } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.svg";   //logo 
 
 export function Navigation() {
@@ -23,7 +23,7 @@ export function Navigation() {
             />
 
             <div className="leading-tight">
-              <p className="text-lg font-bold text-green-700">
+              <p className="text-lg font-bold text-red  -700">
                 BULLDROID
               </p>
               <p className="text-xs text-gray-600">
@@ -34,17 +34,43 @@ export function Navigation() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            <Link to="/" className="hover:text-green-600">Home</Link>
-            <Link to="/services" className="hover:text-green-600">Products</Link>
-            <Link to="/services" className="hover:text-green-600">Technology</Link>
-            <Link to="/about" className="hover:text-green-600">About Us</Link>
-            <Link to="/contact" className="hover:text-green-600">Contact</Link>
 
-            <Link to="/contact">
-              <Button className="bg-green-600 hover:bg-green-700">
-                Request Demo
-              </Button>
-            </Link>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "text-red-600 font-semibold" : "hover:text-red-600"
+              }
+            >
+              Home
+            </NavLink>
+
+            <NavLink
+              to="/products"
+              className={({ isActive }) =>
+                isActive ? "text-red-600 font-semibold" : "hover:text-red-600"
+              }
+            >
+              Products
+            </NavLink>
+
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive ? "text-red-600 font-semibold" : "hover:text-red-600"
+              }
+            >
+              About Us
+            </NavLink>
+
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                isActive ? "text-red-600 font-semibold" : "hover:text-red-600"
+              }
+            >
+              Contact Us
+            </NavLink>
+
           </div>
 
           {/* Mobile Button */}
@@ -59,11 +85,57 @@ export function Navigation() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t flex flex-col gap-4">
-            <Link to="/" onClick={()=>setIsMenuOpen(false)}>Home</Link>
-            <Link to="/services" onClick={()=>setIsMenuOpen(false)}>Products</Link>
-            <Link to="/services" onClick={()=>setIsMenuOpen(false)}>Technology</Link>
-            <Link to="/about" onClick={()=>setIsMenuOpen(false)}>About Us</Link>
-            <Link to="/contact" onClick={()=>setIsMenuOpen(false)}>Contact</Link>
+
+            <NavLink
+              to="/"
+              onClick={() => setIsMenuOpen(false)}
+              className={({ isActive }) =>
+                isActive ? "text-red-600 font-semibold" : ""
+              }
+            >
+              Home
+            </NavLink>
+
+            <NavLink
+              to="/products"
+              onClick={() => setIsMenuOpen(false)}
+              className={({ isActive }) =>
+                isActive ? "text-red-600 font-semibold" : ""
+              }
+            >
+              Products
+            </NavLink>
+
+            <NavLink
+              to="/services"
+              onClick={() => setIsMenuOpen(false)}
+              className={({ isActive }) =>
+                isActive ? "text-red-600 font-semibold" : ""
+              }
+            >
+              Technology
+            </NavLink>
+
+            <NavLink
+              to="/about"
+              onClick={() => setIsMenuOpen(false)}
+              className={({ isActive }) =>
+                isActive ? "text-red-600 font-semibold" : ""
+              }
+            >
+              About Us
+            </NavLink>
+
+            <NavLink
+              to="/contact"
+              onClick={() => setIsMenuOpen(false)}
+              className={({ isActive }) =>
+                isActive ? "text-red-600 font-semibold" : ""
+              }
+            >
+              Contact
+            </NavLink>
+
           </div>
         )}
 
