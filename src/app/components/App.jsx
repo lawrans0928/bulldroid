@@ -7,7 +7,7 @@ import About from "../../pages/About";
 import  Contact  from "../../pages/Contact";
 import Services from "../../pages/Services";
 import Blogs from "../../pages/Blogs";
-import Dashboard from "../../pages/dashboard";
+// import Dashboard from "../../pages/dashboard";
 
 
 export default function App() {
@@ -16,7 +16,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
+        <Route path="/products" element={<Services />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/application" element={<Application />} />

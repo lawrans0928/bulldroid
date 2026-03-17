@@ -2,8 +2,9 @@ import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { useState } from "react";
-
+import { Navigate, useNavigate } from "react-router-dom";
 export function Hero() {
+  const navigate=useNavigate();
   const [showVideo, setShowVideo] = useState(false);
 
   return (
@@ -12,8 +13,7 @@ export function Hero() {
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <ImageWithFallback
-          src="https://static.vecteezy.com/system/resources/thumbnails/042/053/870/small_2x/ai-generated-an-advanced-autonomous-robot-equipped-with-sensors-and-ai-technology-is-operating-in-an-agricultural-field-free-photo.jpg"
-          alt="Agriculture robot in field"
+          src="../../../src/assets/herosectionbackground.jpg"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/50" />
@@ -27,29 +27,20 @@ export function Hero() {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-200 mb-8">
-            Bulldroid builds semi-autonomous agricultural robots designed for Indian farming conditions.
+          Bulldroid is building affordable robots that help farmers automate repetitive farming tasks such as seed broadcasting, fertilizer spreading, and pesticide spraying.
           </p>
 
           <div className="flex gap-4">
-            <Button size="lg" className="bg-green-600 hover:bg-green-700">
-              Get Started
+            <Button size="lg" style={{padding:"10px"}} className="bg-red-600 hover:bg-red -700" onClick={() => navigate("/products")}>
+              Products
               <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-
-            <Button
-              size="lg"
-              variant="outline"
-              className="bg-white/10 text-white border-white hover:bg-white/20"
-              onClick={() => setShowVideo(true)}
-            >
-              Watch Demo
-            </Button>
+          </Button>
           </div>
         </div>
       </div>
 
       {/* VIDEO POPUP */}
-      {showVideo && (
+      {/* {showVideo && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
 
           <div className="relative w-[90%] md:w-[700px]">
@@ -71,8 +62,8 @@ export function Hero() {
             ></iframe>
 
           </div>
-        </div>
-      )}
+        </div> */}
+      {/* )} */}
 
     </section>
   );
