@@ -4,7 +4,7 @@ import { Input } from "./ui/input";
 import { useNavigate } from "react-router-dom";
 import { Mail, Phone, User, ArrowLeft, Users } from "lucide-react";
 
-export default function CTA() {
+export  function CTA() {
 
   const navigate = useNavigate();
 

@@ -5,6 +5,7 @@ import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Mail, User, ArrowLeft } from "lucide-react";
+import internship from "../../assets/internship.png";
 
 export default function Application() {
   const [internDomain, setInternDomain] = useState("");
@@ -125,27 +126,32 @@ export default function Application() {
             )}
           </div>
           {/* SHOW ONLY IF INTERN SELECTED */}
-          {joinForm.role === "Intern" && (
-            <div className="animate-fadeIn">
-              <div className="flex items-center gap-3 mt-2 transition-all duration-300 hover:scale-[1.02]">
-                {/* optional icon reuse */}
-                <FontAwesomeIcon icon={faBriefcase} />
+{joinForm.role === "Intern" && (
+  <div className="animate-fadeIn">
+    <div className="flex items-center gap-3 mt-2 transition-all duration-300 hover:scale-[1.02]">
 
-                <Input
-                  name="internDomain"
-                  placeholder="Enter your preferred domain (e.g. AI, Robotics, Web Dev)"
-                  value={internDomain}
-                  onChange={(e) => setInternDomain(e.target.value)}
-                />
-              </div>
+      {/* FIXED IMAGE */}
+      <img 
+        src={internship} 
+        alt="domain" 
+        className="w-5 h-5 object-contain"
+      />
 
-              {joinErrors.internDomain && (
-                <p className="text-red-500 text-sm">
-                  {joinErrors.internDomain}
-                </p>
-              )}
-            </div>
-          )}
+      <Input
+        name="internDomain"
+        placeholder="Enter your preferred domain (e.g. AI, Robotics, Web Dev)"
+        value={internDomain}
+        onChange={(e) => setInternDomain(e.target.value)}
+      />
+    </div>
+
+    {joinErrors.internDomain && (
+      <p className="text-red-500 text-sm">
+        {joinErrors.internDomain}
+      </p>
+    )}
+  </div>
+)}
 
           {/* MESSAGE */}
           <div>
