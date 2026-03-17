@@ -13,7 +13,7 @@ export function Hero() {
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <ImageWithFallback
-          src="../../../src/assets/herosectionbackground.jpg"
+          src="src/assets/website-bg.jpg"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/50" />
@@ -31,7 +31,7 @@ export function Hero() {
           </p>
 
           <div className="flex gap-4">
-            <Button size="lg" style={{padding:"10px"}} className="bg-red-600 hover:bg-red -700" onClick={() => navigate("/products")}>
+            <Button size="lg" style={{padding:"10px"}} className="bg-red-600 hover:bg-red -700" onClick={() => navigate("/services")}>
               Products
               <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
