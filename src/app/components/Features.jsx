@@ -1,82 +1,104 @@
 import { Cpu, Leaf, TrendingUp, Zap, Shield, Users } from "lucide-react";
 
-const features = [
-  {
-    icon: Cpu,
-    title: "AI-Powered Intelligence",
-    description: "Advanced machine learning algorithms enable our robots to make real-time decisions.",
-    image: "/images/1.png"
-  },
-  {
-    icon: Leaf,
-    title: "Sustainable Farming",
-    description: "Reduce chemical usage by up to 90% with precision targeting.",
-    image: "/images/2.png"
-  },
-  {
-    icon: TrendingUp,
-    title: "Increased Yield",
-    description: "Achieve up to 30% higher crop yields through data-driven insights.",
-    image: "/images/3.png"
-  },
-  {
-    icon: Zap,
-    title: "24/7 Operation",
-    description: "Our robots work around the clock to maximize productivity.",
-    image: "/images/4.png"
-  },
-  {
-    icon: Shield,
-    title: "Weather Resistant",
-    description: "Built to withstand harsh farming conditions.",
-    image: "/images/5.png"
-  },
-  {
-    icon: Users,
-    title: "Easy Integration",
-    description: "Control everything easily from your smartphone.",
-    image: "/images/1.png"
-  }
-];
-
-export function Features() {
+export function AboutUs() {
   return (
     <section className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
 
-        <div className="text-center mb-16">
+        {/* HEADER */}
+        <div className="text-center mb-16 animate-fadeIn">
           <h2 className="text-4xl md:text-5xl mb-4">
-            Farmers Survey
+            About Bulldroid
           </h2>
-          <p className="text-xl text-gray-600">
-            Our team surveyed more than 50 farmers
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            We are building intelligent agricultural robots to transform traditional farming 
+            into a smart, sustainable, and efficient system using AI and automation.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-sm overflow-hidden">
+        {/* MISSION + IMAGE */}
+        <div className="grid md:grid-cols-2 gap-10 items-center mb-20">
 
-              {/* Image with correct 5:4 ratio */}
-              <div className="aspect-[5/4]">
-                <img
-                  src={feature.image}
-                  alt={feature.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+          <div className="space-y-6 animate-slideUp">
+            <h3 className="text-3xl font-semibold">Our Mission</h3>
+            <p className="text-gray-600">
+              Our mission is to empower farmers with cutting-edge robotics and AI solutions 
+              that reduce labor, increase productivity, and promote eco-friendly farming practices.
+            </p>
 
-              <div className="p-6">
-                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                  <feature.icon className="h-6 w-6 text-green-600" />
-                </div>
-
-                <h3 className="text-xl mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-
+            <div className="flex items-center gap-3">
+              <Leaf className="text-green-600" />
+              <span>Sustainable Agriculture</span>
             </div>
-          ))}
+
+            <div className="flex items-center gap-3">
+              <Cpu className="text-blue-600" />
+              <span>AI & Automation Driven</span>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <TrendingUp className="text-purple-600" />
+              <span>Increased Productivity</span>
+            </div>
+          </div>
+
+          <div className="animate-fadeIn">
+            <img
+              src="/images/1.png"
+              alt="robot"
+              className="rounded-xl shadow-lg w-full object-cover"
+            />
+          </div>
+
+        </div>
+
+        {/* WHAT WE DO */}
+        <div className="mb-20 text-center animate-fadeIn">
+          <h3 className="text-3xl font-semibold mb-6">What We Do</h3>
+          <p className="text-gray-600 max-w-3xl mx-auto">
+            Bulldroid develops smart agricultural robots capable of weed detection, 
+            precision spraying, soil monitoring, and autonomous navigation to help 
+            farmers achieve better results with less effort.
+          </p>
+        </div>
+
+        {/* CORE FEATURES */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          {/* CARD 1 */}
+          <div className="bg-white p-6 rounded-xl shadow hover:shadow-xl transition-all duration-500 hover:scale-[1.03]">
+            <Zap className="text-yellow-500 mb-4" />
+            <h4 className="text-xl mb-2">Automation</h4>
+            <p className="text-gray-600">
+              Robots operate autonomously, reducing manual labor and increasing efficiency.
+            </p>
+          </div>
+
+          {/* CARD 2 */}
+          <div className="bg-white p-6 rounded-xl shadow hover:shadow-xl transition-all duration-500 hover:scale-[1.03]">
+            <Shield className="text-red-500 mb-4" />
+            <h4 className="text-xl mb-2">Reliability</h4>
+            <p className="text-gray-600">
+              Built to withstand harsh agricultural environments and operate continuously.
+            </p>
+          </div>
+
+          {/* CARD 3 */}
+          <div className="bg-white p-6 rounded-xl shadow hover:shadow-xl transition-all duration-500 hover:scale-[1.03]">
+            <Users className="text-blue-500 mb-4" />
+            <h4 className="text-xl mb-2">Farmer Friendly</h4>
+            <p className="text-gray-600">
+              Easy-to-use interface designed for farmers with minimal technical knowledge.
+            </p>
+          </div>
+
+        </div>
+
+        {/* FOOTER TEXT */}
+        <div className="text-center mt-20 animate-fadeIn">
+          <p className="text-gray-500">
+            🚀 Innovating Agriculture with Technology — Bulldroid
+          </p>
         </div>
 
       </div>
