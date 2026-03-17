@@ -1,159 +1,181 @@
+import { useState } from "react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Mail, User, ArrowLeft } from "lucide-react";
+import { Mail, Phone, User, ArrowLeft, Users } from "lucide-react";
 
-export default function Application() {
+export default function CTA() {
 
   const navigate = useNavigate();
 
-  const [joinErrors, setJoinErrors] = useState({});
-  const [joinSuccess, setJoinSuccess] = useState(false);
+  const [view, setView] = useState("menu");
 
-  const [joinForm, setJoinForm] = useState({
+  const [errors, setErrors] = useState({});
+  const [contactSuccess, setContactSuccess] = useState(false);
+
+  const [form, setForm] = useState({
     name: "",
     email: "",
-    role: "",
+    phone: "",
     message: "",
   });
 
-  const handleJoinChange = (e) => {
-    setJoinForm({ ...joinForm, [e.target.name]: e.target.value });
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleJoinSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     let newErrors = {};
 
-    if (!joinForm.name) newErrors.name = "Name required";
-    if (!joinForm.email) newErrors.email = "Email required";
-    if (!joinForm.role) newErrors.role = "Please select a role"; // updated message
-    if (!joinForm.message) newErrors.message = "Tell us about yourself";
+    if (!form.name) newErrors.name = "Please enter your name";
+    if (!form.email) newErrors.email = "Email is required";
+    if (!form.phone) newErrors.phone = "Phone number required";
+    if (!form.message) newErrors.message = "Message cannot be empty";
 
-    setJoinErrors(newErrors);
+    setErrors(newErrors);
 
     if (Object.keys(newErrors).length > 0) return;
 
-    setJoinSuccess(true);
-    setTimeout(() => setJoinSuccess(false), 3000);
+    const res = await fetch("http://localhost:5000/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    });
 
-    setJoinForm({ name: "", email: "", role: "", message: "" });
-    setJoinErrors({});
+    const data = await res.json();
+
+    if (data.status === "admin") {
+      navigate("/dashboard");
+      return;
+    }
+
+    if (data.status === "success") {
+      setContactSuccess(true);
+      setTimeout(() => setContactSuccess(false), 3000);
+
+      setForm({ name: "", email: "", phone: "", message: "" });
+      setErrors({});
+    }
   };
 
   return (
     <section className="py-28 bg-gray-50">
       <div className="max-w-xl mx-auto px-4">
 
-        <div className="bg-white p-8 rounded-xl shadow-lg space-y-5 animate-slideUp transition-all duration-500">
+        {view === "menu" && (
+          <div className="text-center space-y-10 animate-fadeIn">
 
-          {/* BACK BUTTON */}
-          <button
-            onClick={() => navigate(-1)}
-            className="flex items-center gap-2 text-sm text-gray-500 hover:text-black transition-colors duration-300"
-          >
-            <ArrowLeft size={16} /> Back
-          </button>
+            <h2 className="text-4xl font-semibold transition-transform duration-500 hover:scale-105">
+              Connect With Bulldroid
+            </h2>
 
-          <h3 className="text-2xl font-semibold">Join Our Team</h3>
+            <p className="text-gray-600 transition-opacity duration-500 hover:opacity-80">
+              Choose how you would like to interact with us
+            </p>
 
-          {/* NAME */}
-          <div>
-            <div className="flex items-center gap-3 transition-all duration-300 hover:scale-[1.02]">
-              <User size={18} />
-              <Input
-                name="name"
-                placeholder="Your Name"
-                value={joinForm.name}
-                onChange={handleJoinChange}
-              />
-            </div>
-            {joinErrors.name && (
-              <p className="text-red-500 text-sm">{joinErrors.name}</p>
-            )}
-          </div>
+            <div className="grid gap-6 mt-10">
 
-          {/* EMAIL */}
-          <div>
-            <div className="flex items-center gap-3 transition-all duration-300 hover:scale-[1.02]">
-              <Mail size={18} />
-              <Input
-                name="email"
-                placeholder="Email"
-                value={joinForm.email}
-                onChange={handleJoinChange}
-              />
-            </div>
-            {joinErrors.email && (
-              <p className="text-red-500 text-sm">{joinErrors.email}</p>
-            )}
-          </div>
-
-          {/* ROLE FIELD (CHANGED FROM INPUT TO SELECT DROPDOWN) */}
-          <div>
-            <div className="flex items-center gap-3 transition-all duration-300 hover:scale-[1.02]">
-              <FontAwesomeIcon icon={faBriefcase} />
-
-              {/* CHANGED: this used to be <Input ... /> */}
-              <select
-                name="role"
-                value={joinForm.role}
-                onChange={handleJoinChange}
-                className="w-full border rounded-lg p-2 bg-white"
+              <button
+                onClick={() => setView("contact")}
+                className="group bg-white border rounded-xl p-8 shadow hover:shadow-xl transition-all duration-500 hover:border-red-500 hover:scale-[1.03]"
               >
-                {/* NEW: dropdown options */}
-                <option value="">Select Role</option>
-                <option value="Robotics Engineer">Robotics Engineer</option>
-                <option value="AI Developer">AI Developer</option>
-                <option value="Mechanical Designer">Mechanical Designer</option>
-                <option value="Embedded Systems Engineer">
-                  Embedded Systems Engineer
-                </option>
-                <option value="Intern">Intern</option>
-              </select>
+                <h3 className="flex items-center justify-center gap-2 text-xl font-semibold mb-2 group-hover:text-red-600 transition-colors duration-300">
+                  <Phone size={20} />
+                  Contact Us
+                </h3>
+
+                <p className="text-gray-500 transition-opacity duration-300 group-hover:opacity-80">
+                  Ask questions, request demos, or partner with us
+                </p>
+              </button>
+
+              <button
+                onClick={() => navigate("/application")}
+                className="group bg-white border rounded-xl p-8 shadow hover:shadow-xl transition-all duration-500 hover:border-red-500 hover:scale-[1.03]"
+              >
+                <h3 className="flex items-center justify-center gap-2 text-xl font-semibold mb-2 group-hover:text-red-600 transition-colors duration-300">
+                  <Users size={20} />
+                  Join Our Team
+                </h3>
+
+                <p className="text-gray-500 transition-opacity duration-300 group-hover:opacity-80">
+                  Apply to work with our robotics engineering team
+                </p>
+              </button>
 
             </div>
-
-            {joinErrors.role && (
-              <p className="text-red-500 text-sm">{joinErrors.role}</p>
-            )}
           </div>
+        )}
 
-          {/* MESSAGE */}
-          <div>
-            <textarea
-              name="message"
-              placeholder="Tell us about yourself..."
-              value={joinForm.message}
-              onChange={handleJoinChange}
-              className="w-full border rounded-lg p-3 h-32 transition-shadow duration-300 focus:shadow-md"
-            />
-            {joinErrors.message && (
-              <p className="text-red-500 text-sm">{joinErrors.message}</p>
-            )}
-          </div>
+        {view === "contact" && (
+          <div className="bg-white p-8 rounded-xl shadow-lg space-y-5 animate-slideUp transition-all duration-500">
 
-          {/* SUBMIT BUTTON */}
-          <Button
-            onClick={handleJoinSubmit}
-            className="bg-red-600 hover:bg-red-700 w-full transition-all duration-500 hover:scale-[1.05]"
-          >
-            Apply Now
-          </Button>
+            <button
+              onClick={() => setView("menu")}
+              className="flex items-center gap-2 text-sm text-gray-500 hover:text-black transition-colors duration-300"
+            >
+              <ArrowLeft size={16}/> Back
+            </button>
 
-          {/* SUCCESS MESSAGE */}
-          {joinSuccess && (
-            <div className="flex items-center gap-2 text-green-600 text-sm animate-fadeIn">
-              <span className="w-2 h-2 bg-green-500 rounded-full animate-ping"></span>
-              Application submitted
+            <h3 className="text-2xl font-semibold transition-transform duration-500 hover:scale-105">
+              Contact Us
+            </h3>
+
+            <div>
+              <div className="flex items-center gap-3 transition-all duration-300 hover:scale-[1.02]">
+                <User size={18}/>
+                <Input name="name" placeholder="Your Name" value={form.name} onChange={handleChange}/>
+              </div>
+              {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
             </div>
-          )}
 
-        </div>
+            <div>
+              <div className="flex items-center gap-3 transition-all duration-300 hover:scale-[1.02]">
+                <Mail size={18}/>
+                <Input name="email" placeholder="Email" value={form.email} onChange={handleChange}/>
+              </div>
+              {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+            </div>
+
+            <div>
+              <div className="flex items-center gap-3 transition-all duration-300 hover:scale-[1.02]">
+                <Phone size={18}/>
+                <Input name="phone" placeholder="Phone Number" value={form.phone} onChange={handleChange}/>
+              </div>
+              {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
+            </div>
+
+            <div>
+              <textarea
+                name="message"
+                placeholder="Your message..."
+                value={form.message}
+                onChange={handleChange}
+                className="w-full border rounded-lg p-3 h-32 transition-shadow duration-300 focus:shadow-md"
+              />
+              {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
+            </div>
+
+            <Button
+              onClick={handleSubmit}
+              className="bg-red-600 hover:bg-red-700 w-full transition-all duration-500 hover:scale-[1.05]"
+            >
+              Send Message
+            </Button>
+
+            {contactSuccess && (
+              <div className="mt-3 flex items-center gap-2 text-green-600 text-sm animate-fadeIn">
+                <span className="w-2 h-2 bg-green-500 rounded-full animate-ping"></span>
+                Message sent successfully
+              </div>
+            )}
+
+          </div>
+        )}
 
       </div>
     </section>

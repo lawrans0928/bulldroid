@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { Mail, User, ArrowLeft } from "lucide-react";
 
 export default function Application() {
+  const [internDomain, setInternDomain] = useState("");
 
   const navigate = useNavigate();
 
@@ -28,6 +29,10 @@ export default function Application() {
     e.preventDefault();
 
     let newErrors = {};
+    if (!joinForm.message) newErrors.message = "Tell us about yourself";
+    if (joinForm.role === "Intern" && !internDomain) {
+      newErrors.internDomain = "Please enter your internship domain";
+    }
 
     if (!joinForm.name) newErrors.name = "Name required";
     if (!joinForm.email) newErrors.email = "Email required";
@@ -48,9 +53,7 @@ export default function Application() {
   return (
     <section className="py-28 bg-gray-50">
       <div className="max-w-xl mx-auto px-4">
-
         <div className="bg-white p-8 rounded-xl shadow-lg space-y-5 animate-slideUp transition-all duration-500">
-
           {/* BACK BUTTON */}
           <button
             onClick={() => navigate(-1)}
@@ -115,13 +118,34 @@ export default function Application() {
                 </option>
                 <option value="Intern">Intern</option>
               </select>
-
             </div>
 
             {joinErrors.role && (
               <p className="text-red-500 text-sm">{joinErrors.role}</p>
             )}
           </div>
+          {/* SHOW ONLY IF INTERN SELECTED */}
+          {joinForm.role === "Intern" && (
+            <div className="animate-fadeIn">
+              <div className="flex items-center gap-3 mt-2 transition-all duration-300 hover:scale-[1.02]">
+                {/* optional icon reuse */}
+                <FontAwesomeIcon icon={faBriefcase} />
+
+                <Input
+                  name="internDomain"
+                  placeholder="Enter your preferred domain (e.g. AI, Robotics, Web Dev)"
+                  value={internDomain}
+                  onChange={(e) => setInternDomain(e.target.value)}
+                />
+              </div>
+
+              {joinErrors.internDomain && (
+                <p className="text-red-500 text-sm">
+                  {joinErrors.internDomain}
+                </p>
+              )}
+            </div>
+          )}
 
           {/* MESSAGE */}
           <div>
@@ -152,9 +176,7 @@ export default function Application() {
               Application submitted
             </div>
           )}
-
         </div>
-
       </div>
     </section>
   );
