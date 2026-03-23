@@ -1,5 +1,5 @@
 import { Navigation } from "../app/components/Navigation";
-import { AboutUs } from "../app/components/Features";
+import { AboutUs } from "../app/components/About_us";
 // import { Stats } from "../app/components/Stats";
 import { Footer } from "../app/components/Footer";
 

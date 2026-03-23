@@ -1,6 +1,9 @@
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 function HoverBox({ title, children }) {
+  
   return (
     <div
       tabIndex={0}
@@ -45,6 +48,7 @@ function HoverBox({ title, children }) {
   );
 }
 export function Products() {
+  const navigate = useNavigate();
   return (
     <section className="py-16 sm:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -217,7 +221,36 @@ export function Products() {
             />
           </div>
         </div>
+        
+        
+        
       </div>
+      {/* CTA SECTION */}
+<div className="text-center mt-20 animate-fadeIn">
+
+  <button
+    onClick={() => navigate("/about")}
+    className="
+      inline-flex items-center gap-2
+      px-6 py-3
+      bg-red-600 text-white
+      rounded-xl
+      shadow-md
+      hover:bg-red-700
+      hover:shadow-xl
+      hover:-translate-y-1
+      transition-all duration-300
+    "
+  >
+    Learn More About Us
+    <ArrowRight className="w-4 h-4" />
+  </button>
+
+</div>
+     
     </section>
+    
   );
+  
+
 }
