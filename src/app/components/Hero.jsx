@@ -31,7 +31,7 @@ export function Hero() {
           </p>
 
           <div className="flex gap-4">
-            <Button size="lg" style={{padding:"10px"}} className="bg-red-600 hover:bg-red -700" onClick={() => navigate("/products")}>
+            <Button size="lg" className="bg-red-600 hover:bg-red -700" onClick={() => navigate("/products")}>
               Products
               <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
