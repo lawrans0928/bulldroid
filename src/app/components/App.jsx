@@ -9,11 +9,14 @@ import {Services} from "../../pages/Services";
 // import Dashboard from "../../pages/dashboard";
 import Dashboard from "../../pages/dashboard";
 import Application from "../../pages/Application";
+import ScrollToTop from "./ui/ScrollToTop";
 
 
 export default function App() {
   return (
+   
     <BrowserRouter>
+     <ScrollToTop /> 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

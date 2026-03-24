@@ -3,7 +3,6 @@ import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 function HoverBox({ title, children }) {
-  
   return (
     <div
       tabIndex={0}
@@ -47,19 +46,20 @@ function HoverBox({ title, children }) {
     </div>
   );
 }
+
 export function Products() {
   const navigate = useNavigate();
+
   return (
     <section className="py-16 sm:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* HEADER */}
         <div className="text-center mb-16 sm:mb-24">
-          {/* red transition */}
           <h2 className="relative inline-block text-3xl sm:text-4xl md:text-5xl font-semibold mb-6 tracking-tight text-gray-800">
             <span className="relative z-10">
               Bulldroid Agricultural Robotics
             </span>
-
             <span className="absolute inset-0 bg-red-500/60 blur-xl rounded-lg animate-[pulse_6s_ease-in-out_infinite]"></span>
           </h2>
 
@@ -148,12 +148,13 @@ export function Products() {
           </div>
 
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 ">
+
             <div className="group p-6 sm:p-8 border border-gray-200 rounded-xl hover:border-red-500 transition duration-300 hover:-translate-y-2 hover:shadow-lg ">
               <h4 className="text-lg sm:text-xl font-semibold mb-4 text-red-600 ">
                 Seed Broadcasting
               </h4>
 
-              <p className="text-gray-600 leading-relaxed text-sm sm:text-base group-hover:text-black">
+              <p className="text-gray-600 text-justify leading-relaxed text-sm sm:text-base group-hover:text-black">
                 Evenly distributes seeds across farmland to improve planting
                 efficiency and reduce manual labour.
               </p>
@@ -164,7 +165,7 @@ export function Products() {
                 Fertilizer Spreading
               </h4>
 
-              <p className="text-gray-600 leading-relaxed text-sm sm:text-base group-hover:text-black">
+              <p className="text-gray-600 text-justify leading-relaxed text-sm sm:text-base group-hover:text-black">
                 Precisely spreads fertilizer across crops to ensure balanced
                 nutrient distribution and improved crop growth.
               </p>
@@ -175,7 +176,7 @@ export function Products() {
                 Pesticide Spraying
               </h4>
 
-              <p className="text-gray-600 leading-relaxed text-sm sm:text-base group-hover:text-black">
+              <p className="text-gray-600 text-justify leading-relaxed text-sm sm:text-base group-hover:text-black">
                 Automated spraying system that helps protect crops while
                 reducing manual exposure to chemicals.
               </p>
@@ -186,12 +187,13 @@ export function Products() {
                 Crop Monitoring
               </h4>
 
-              <p className="text-gray-600 leading-relaxed text-sm sm:text-base group-hover:text-black">
+              <p className="text-gray-600 text-justify leading-relaxed text-sm sm:text-base group-hover:text-black">
                 Uses sensors and intelligent monitoring systems to track crop
                 health, detect early plant diseases, and help farmers make
                 data-driven decisions.
               </p>
             </div>
+
           </div>
         </div>
 
@@ -221,36 +223,30 @@ export function Products() {
             />
           </div>
         </div>
-        
-        
-        
+
       </div>
+
       {/* CTA SECTION */}
-<div className="text-center mt-20 animate-fadeIn">
+      <div className="text-center mt-20 animate-fadeIn">
+        <button
+          onClick={() => navigate("/about")}
+          className="
+            inline-flex items-center gap-2
+            px-6 py-3
+            bg-red-600 text-white
+            rounded-xl
+            shadow-md
+            hover:bg-red-700
+            hover:shadow-xl
+            hover:-translate-y-1
+            transition-all duration-300
+          "
+        >
+          Learn More About Us
+          <ArrowRight className="w-4 h-4" />
+        </button>
+      </div>
 
-  <button
-    onClick={() => navigate("/about")}
-    className="
-      inline-flex items-center gap-2
-      px-6 py-3
-      bg-red-600 text-white
-      rounded-xl
-      shadow-md
-      hover:bg-red-700
-      hover:shadow-xl
-      hover:-translate-y-1
-      transition-all duration-300
-    "
-  >
-    Learn More About Us
-    <ArrowRight className="w-4 h-4" />
-  </button>
-
-</div>
-     
     </section>
-    
   );
-  
-
 }

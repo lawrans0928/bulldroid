@@ -1,12 +1,17 @@
 import { Users, Sparkles, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { founders } from "../../constants/founders"; // adjust path if needed
+import ScrollToTop from "./ui/ScrollToTop";
 
 export function AboutUs() {
   const navigate = useNavigate();
 
   return (
     <section className="py-24 bg-gray-50">
+
+      {/* ✅ ADD THIS LINE */}
+      <ScrollToTop />
+
       <div className="max-w-7xl mx-auto px-4">
 
         {/* HEADER with glow */}
@@ -72,59 +77,51 @@ transition duration-500 group-hover:scale-105"
               <img src="/images/alagappa.png" className="h-35 object-contain hover:scale-110 transition" />
               <img src="/images/mkv.png" className="h-30 object-contain hover:scale-110 transition" />
             <img src="/images/gov.png" className="h-30  object-contain hover:scale-110 transition" />
-           
-           
-             
           </div>
 
           {/* DESCRIPTION */}
-          <p className="text-gray-600 text-center max-w-4xl mx-auto leading-relaxed mb-12">
-            Our startup is proudly incubated under 
+          <p className="text-gray-600 text-justify max-w-4xl mx-auto leading-relaxed mb-12">
+            Our startup is proudly incubated under{" "}
 
-            {/* 🔗 LINK ADDED: MANAGE-CIA */}
             <a
               href="https://www.manage.gov.in/managecia/"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-red-700 relative inline-block ml-1 mr-1
-              after:block after:h-[2px] after:bg-red-700 after:scale-x-0 
-              after:transition-transform after:duration-300 
-              hover:after:scale-x-100 after:origin-left"
+              className="font-semibold text-red-700 inline-block relative inline-block
+                  after:block after:h-[2px] after:bg-red-600 after:scale-x-0 
+                  after:transition-transform after:duration-300 
+                  hover:after:scale-x-100 after:origin-left"
             >
               MANAGE-CIA, Hyderabad
-            </a>
+            </a>{" "}
+            and{" "}
 
-          and 
-
-            {/* 🔗 LINK ADDED: ALAGAPPA */}
             <a
               href="https://accet.ac.in/incubation"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-red-700 relative inline-block ml-1 mr-1
-              after:block after:h-[2px] after:bg-red-700 after:scale-x-0 
-              after:transition-transform after:duration-300 
-              hover:after:scale-x-100 after:origin-left"
+              className="font-semibold text-red-700 inline-block relative inline-block
+                  after:block after:h-[2px] after:bg-red-600 after:scale-x-0 
+                  after:transition-transform after:duration-300 
+                  hover:after:scale-x-100 after:origin-left"
             >
               Alagappa Incubation Forum
-            </a>, 
+            </a>
+            , supported by Government of India innovation ecosystems.{" "}
 
-            supported by Government of India innovation ecosystems. 
-            We have also been awarded funding under the prestigious 
+            We have also been awarded funding under the prestigious{" "}
 
-            {/* 🔗 LINK ADDED: RKVY */}
             <a
               href="https://www.manage.gov.in/managecia/RKVYProg.aspx"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-red-700 relative inline-block ml-1
-              after:block after:h-[2px] after:bg-red-700 after:scale-x-0 
-              after:transition-transform after:duration-300 
-              hover:after:scale-x-100 after:origin-left"
+              className="font-semibold text-red-700 inline-block relative inline-block
+                  after:block after:h-[2px] after:bg-red-600 after:scale-x-0 
+                  after:transition-transform after:duration-300 
+                  hover:after:scale-x-100 after:origin-left"
             >
               RKVY–RAFTAAR
-            </a>
-
+            </a>{" "}
             program, recognizing our work as innovative, scalable, and impactful.
           </p>
 
@@ -132,9 +129,9 @@ transition duration-500 group-hover:scale-105"
           <div className="grid md:grid-cols-3 gap-6">
 
             <div className="group p-6 rounded-xl border border-gray-200 
-              hover:border-red-500 hover:-translate-y-2 hover:shadow-lg transition duration-300 text-center">
+              hover:border-red-500 hover:-translate-y-2 hover:shadow-lg transition duration-300 
+              flex items-center justify-center text-center min-h-[120px]">
               
-              {/* 🔗 LINK ADDED: MANAGE CARD */}
               <h4 className="font-semibold mb-2 text-red-600">
                 <a
                   href="https://www.manage.gov.in/managecia/"
@@ -151,9 +148,9 @@ transition duration-500 group-hover:scale-105"
             </div>
 
             <div className="group p-6 rounded-xl border border-gray-200 
-              hover:border-red-500 hover:-translate-y-2 hover:shadow-lg transition duration-300 text-center">
+              hover:border-red-500 hover:-translate-y-2 hover:shadow-lg transition duration-300 
+              flex items-center justify-center text-center min-h-[120px]">
               
-              {/* 🔗 LINK ADDED: ALAGAPPA CARD */}
               <h4 className="font-semibold mb-2 text-red-600">
                 <a
                   href="https://accet.ac.in/incubation"
@@ -170,25 +167,29 @@ transition duration-500 group-hover:scale-105"
             </div>
 
             <div className="group p-6 rounded-xl border border-gray-200 
-              hover:border-red-500 hover:-translate-y-2 hover:shadow-lg transition duration-300 text-center">
-              <h4 className="font-semibold mb-2 text-red-600">
-                Govt Program
-              </h4>
+              hover:border-red-500 hover:-translate-y-2 hover:shadow-lg transition duration-300 
+              flex items-center justify-center text-center min-h-[120px]">
 
-              {/* 🔗 LINK ADDED: RKVY CARD */}
-              <p className="text-gray-600 text-sm group-hover:text-black">
-                <a
-                  href="https://www.manage.gov.in/managecia/RKVYProg.aspx"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative inline-block
-                  after:block after:h-[2px] after:bg-black after:scale-x-0 
-                  after:transition-transform after:duration-300 
-                  hover:after:scale-x-100 after:origin-left"
-                >
-                  RKVY–RAFTAAR
-                </a>
-              </p>
+              <div>
+                <h4 className="font-semibold mb-2 text-red-600">
+                  Govt Program
+                </h4>
+
+                <p className="text-gray-600 text-sm group-hover:text-black">
+                  <a
+                    href="https://www.manage.gov.in/managecia/RKVYProg.aspx"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative inline-block
+                    after:block after:h-[2px] after:bg-black after:scale-x-0 
+                    after:transition-transform after:duration-300 
+                    hover:after:scale-x-100 after:origin-left"
+                  >
+                    RKVY–RAFTAAR
+                  </a>
+                </p>
+              </div>
+
             </div>
 
           </div>

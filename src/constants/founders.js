@@ -12,5 +12,10 @@ export const founders = [
     // education: "B.Sc Chemistry",
     experience: "Experience at L&T Finance",
     image: "/founders/bavan.jpg",
+  },{
+    name: "Akhil G",
+    role: "CTO",
+    experience: "Former Software Developer at Vyasaka Technologies Pvt Ltd",
+    image:""
   }
 ];

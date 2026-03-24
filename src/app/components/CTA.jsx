@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
+// import ScrollToTop from "./ui/ScrollToTop";
 import { useNavigate } from "react-router-dom";
 import { Mail, Phone, User, ArrowLeft, Users } from "lucide-react";
 
 export  function CTA() {
-
+  // <ScrollToTop />
   const navigate = useNavigate();
 
   const [view, setView] = useState("menu");
