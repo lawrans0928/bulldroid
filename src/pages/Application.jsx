@@ -1,15 +1,15 @@
 
 import { Navigation } from "../app/components/Navigation";
-import  {CTA } from "../app/components/CTA";
+import Application from "../app/components/Application";
 import { Footer } from "../app/components/Footer";
 
-
-export default function Contact(){
+export default function ApplicationPage(){
   return (
     <>
       <Navigation />
-      <CTA />
+      <Application/>
       <Footer />
     </>
   );
 }
+   
