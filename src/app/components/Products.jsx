@@ -39,7 +39,8 @@ function HoverBox({ title, children }) {
         group-focus-within:mt-4
         "
       >
-        <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
+        {/* SAME STYLE AS KEY OPERATIONS */}
+        <p className="text-gray-600 text-justify leading-relaxed text-sm sm:text-base group-hover:text-black">
           {children}
         </p>
       </div>
@@ -83,8 +84,8 @@ export function Products() {
             </HoverBox>
 
             <HoverBox title="Repetitive Agricultural Tasks">
-              Tasks such as seed broadcasting, fertilizer spreading, and
-              pesticide spraying must be performed frequently across large areas
+              Tasks  such        as seed broadcasting, fertilizer spreading, and
+              pesticide spraying       must be performed frequently across large areas
               of farmland.
             </HoverBox>
 
@@ -135,7 +136,7 @@ export function Products() {
           </div>
         </div>
 
-        {/* KEY OPERATIONS */}
+        {/* KEY OPERATIONS (UNCHANGED) */}
         <div className="mb-20 sm:mb-28">
           <div className="text-center mb-12 sm:mb-14">
             <h3 className="text-2xl sm:text-3xl font-semibold mb-4 text-red-500">
@@ -226,7 +227,7 @@ export function Products() {
 
       </div>
 
-      {/* CTA SECTION */}
+      {/* CTA */}
       <div className="text-center mt-20 animate-fadeIn">
         <button
           onClick={() => navigate("/about")}
