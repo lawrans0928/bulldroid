@@ -40,7 +40,7 @@ export function AboutUs() {
         <img
           src={founder.image}
           alt={founder.name}
-          className="w-48 h-58 object-cover rounded-xl mb-6 border-4 border-red-100 
+          className="w-48 h-62 object-cover rounded-xl mb-6 border-4 border-red-100 
 transition duration-500 group-hover:scale-105"
         />
 
