@@ -216,7 +216,7 @@ transition duration-500 group-hover:scale-105"
       transition-all duration-300
     "
   >
-    Contact Us
+    Be Part Of What’s Coming
     <ArrowRight className="w-4 h-4" />
   </button>
 

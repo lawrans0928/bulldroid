@@ -2,7 +2,7 @@ import { Button } from "./ui/button";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo.png";
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,7 +24,7 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* LOGO */}
           <Link to="/" className="flex items-center gap-3">
-            {/* <img src={logo} alt="Bulldroid Logo" className="h-10 w-auto" /> */}
+            <img src={logo} alt="Bulldroid Logo" className="h-13 w-auto" />
 
             <div className="leading-tight">
               <p className="text-lg font-bold text-red-500 hover:text-green-700">

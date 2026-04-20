@@ -120,6 +120,10 @@ export function Products() {
               The robot is designed to be simple, efficient, and affordable so
               farmers can easily adopt modern technology.
             </HoverBox>
+            <HoverBox title="We Build Assets-Not Tools">
+              We build asset-class products that generate returns for farmers—not commodities that get replaced.  
+            </HoverBox>
+ 
 
             <HoverBox title="Modular Design">
               With interchangeable components the robot can perform multiple
@@ -243,7 +247,7 @@ export function Products() {
             transition-all duration-300
           "
         >
-          Learn More About Us
+         Who’s Building This Future ?
           <ArrowRight className="w-4 h-4" />
         </button>
       </div>

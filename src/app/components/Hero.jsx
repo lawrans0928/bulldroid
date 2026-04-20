@@ -32,10 +32,15 @@ export function Hero() {
           </p>
 
           <div className="flex gap-4">
-            <Button size="lg" style={{padding:"10px"}} className="bg-red-600 hover:bg-red -700" onClick={() => navigate("/services")}>
-              Products
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+           <Button
+  size="lg"
+  style={{ padding: "10px" }}
+  className="bg-red-600 hover:bg-red-700 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg flex items-center"
+  onClick={() => navigate("/services")}
+>
+  This Isn’t A Machine. Tap To See Why
+  <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+</Button>
           </div>
         </div>
       </div>
