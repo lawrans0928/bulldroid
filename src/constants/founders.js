@@ -8,9 +8,9 @@ export const founders = [
   },
   {
     name: "Bavan Sree Arun Seelan A",
-    role: "Co-Founder & CEO",
+    role: "Co-Founder & CEOO",
     // education: "B.Sc Chemistry",
-    experience: "Experience in Field Loan Officer at L&T Finance Pvt Ltd",
+    experience: "Experience at L&T Finance Pvt Ltd",
     image: "/founders/bavan.jpg",
   },{
     name: "Akhil G",
@@ -21,7 +21,7 @@ export const founders = [
   {
     name: "Aravind V S",
     role: "Co-Founder & CTO",
-    experience: "Former Experience in Machine Maintenance at Titan Company-SS case plant, Coimbatore",
+    experience: "Former Experience at Titan Company-SS case plant, Coimbatore",
     image:"/founders/aravid-cpa.jpeg"
   }
 ];
