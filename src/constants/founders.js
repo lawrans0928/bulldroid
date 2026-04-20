@@ -1,5 +1,6 @@
 export const founders = [
   {
+    //test
     name: "Aatheshwaran S",
     role: "Founder & CEO",
     // education: "Diploma in CSE and B.E in ECE",
@@ -9,6 +10,7 @@ export const founders = [
   {
     name: "Bavan Sree Arun Seelan A",
     role: "Co-Founder & COO",
+  
     // education: "B.Sc Chemistry",
     experience: "Experience at L&T Finance Pvt Ltd",
     image: "/founders/bavan.jpg",
