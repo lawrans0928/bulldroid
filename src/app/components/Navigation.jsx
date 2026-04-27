@@ -27,7 +27,7 @@ export function Navigation() {
             <img src={logo} alt="Bulldroid Logo" className="h-13 w-auto" />
 
             <div className="leading-tight">
-              <p className="text-lg font-bold text-red-500 hover:text-green-700">
+              <p className="text-lg font-bold text-red-500">
                 BULLDROID
               </p>
               <p className="text-xs text-gray-600">AGRI ROBOTICS PVT LTD</p>

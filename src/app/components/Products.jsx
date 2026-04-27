@@ -59,14 +59,13 @@ export function Products() {
         <div className="text-center mb-16 sm:mb-24">
           <h2 className="relative inline-block text-3xl sm:text-4xl md:text-5xl font-semibold mb-6 tracking-tight text-gray-800">
             <span className="relative z-10">
-              Bulldroid Agricultural Robotics
+              Bulldroid MK-1
             </span>
             <span className="absolute inset-0 bg-red-500/60 blur-xl rounded-lg animate-[pulse_6s_ease-in-out_infinite]"></span>
           </h2>
 
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-            A multi-purpose robotic platform designed to automate repetitive
-            farming operations and reduce labour dependency.
+            We are building an asset-class product.
           </p>
         </div>
 
@@ -83,10 +82,8 @@ export function Products() {
               increase overall farming costs.
             </HoverBox>
 
-            <HoverBox title="Repetitive Agricultural Tasks">
-              Tasks  such        as seed broadcasting, fertilizer spreading, and
-              pesticide spraying       must be performed frequently across large areas
-              of farmland.
+            <HoverBox title="Physically demanding tasks">
+              Tasks like seed broadcasting, fertilizer spreading, and pesticide spraying must be performed frequently across large farmlands. They are highly labor-intensive.
             </HoverBox>
 
             <HoverBox title="Reduced Farming Efficiency">
@@ -233,24 +230,24 @@ export function Products() {
 
       {/* CTA */}
       <div className="text-center mt-20 animate-fadeIn">
-        <button
-          onClick={() => navigate("/about")}
-          className="
-            inline-flex items-center gap-2
-            px-6 py-3
-            bg-red-600 text-white
-            rounded-xl
-            shadow-md
-            hover:bg-red-700
-            hover:shadow-xl
-            hover:-translate-y-1
-            transition-all duration-300
-          "
-        >
-         Who’s Building This Future ?
-          <ArrowRight className="w-4 h-4" />
-        </button>
-      </div>
+  <button
+    onClick={() => navigate("/about")}
+    className="
+      inline-flex items-center gap-2
+      px-8 py-4
+      bg-red-600 text-white text-lg
+      rounded-xl
+      shadow-md
+      hover:bg-red-700
+      hover:shadow-xl
+      hover:-translate-y-1
+      transition-all duration-300
+    "
+  >
+    Who’s Building This Future ?
+    <ArrowRight className="w-5 h-5" />
+  </button>
+</div>
 
     </section>
   );

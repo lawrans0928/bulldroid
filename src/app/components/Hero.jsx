@@ -21,27 +21,32 @@ export function Hero() {
       {/* Text */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-20">
         <div className="max-w-3xl">
-          <h1 className="text-5xl md:text-7xl text-white mb-6">
-            Reinventing Farming with Robotics
-          </h1>
-
-          <p className="text-xl md:text-2xl text-gray-200 mb-8">
-            Bulldroid is building affordable robots that help farmers automate
-            repetitive farming tasks such as seed broadcasting, fertilizer
-            spreading, and pesticide spraying.
-          </p>
-
-          <div className="flex gap-4">
-           <Button
-  size="lg"
-  style={{ padding: "10px" }}
-  className="bg-red-600 hover:bg-red-700 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg flex items-center"
-  onClick={() => navigate("/services")}
->
-  This Isn’t A Machine. Tap To See Why
-  <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-</Button>
-          </div>
+         <div>
+           <h1 className="text-5xl md:text-7xl font-extrabold text-white whitespace-nowrap">
+            Reinventing Farming
+            </h1>
+            <h2 className="text-xl md:text-2xl font-bold text-white mt-2">
+              We make the hardest farm work effortless
+              </h2>
+              </div>
+              <br />
+              <p className="text-sm md:text-base text-white leading-relaxed">
+                We are building an affordable, multipurpose robot that helps farmers automate the toughest jobs.
+                <br />
+                We aim to make smart agricultural automation accessible to every farmer in India.
+              </p>
+              <br />
+              <div className="flex gap-4">
+  <Button
+    size="lg"
+    style={{ padding: "14px 24px" }}
+    className="bg-red-600 hover:bg-red-700 text-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg flex items-center"
+    onClick={() => navigate("/services")}
+  >
+    This Isn’t A Machine. Tap To See Why
+    <ArrowRight className="ml-2 h-6 w-6 transition-transform duration-300 group-hover:translate-x-1" />
+  </Button>
+</div>
         </div>
       </div>
 

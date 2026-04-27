@@ -201,24 +201,23 @@ transition duration-500 group-hover:scale-105"
   <p className="text-gray-500 mb-6">
     🚀 Innovating Agriculture with Intelligence — Bulldroid
   </p>
-
   <button
-    onClick={() => navigate("/contact")}
-    className="
-      inline-flex items-center gap-2
-      px-6 py-3
-      bg-red-600 text-white
-      rounded-xl
-      shadow-md
-      hover:bg-red-700
-      hover:shadow-xl
-      hover:-translate-y-1
-      transition-all duration-300
-    "
-  >
-    Be Part Of What’s Coming
-    <ArrowRight className="w-4 h-4" />
-  </button>
+  onClick={() => navigate("/contact")}
+  className="
+    inline-flex items-center gap-2
+    px-8 py-4
+    bg-red-600 text-white text-lg
+    rounded-xl
+    shadow-md
+    hover:bg-red-700
+    hover:shadow-xl
+    hover:-translate-y-1
+    transition-all duration-300
+  "
+>
+  Be Part Of What’s Coming
+  <ArrowRight className="w-5 h-5" />
+</button>
 
 </div>
 
