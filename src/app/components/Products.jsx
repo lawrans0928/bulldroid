@@ -66,7 +66,7 @@ export function Products() {
           </p>
         </div>
         <div className="group p-2 sm:p-5 border border-gray-200 rounded-xl hover:border-red-500 transition duration-300 hover:-translate-y-2 hover:shadow-lg max-w-3xl mx-auto">
-          <h4 className="text-xl sm:text-2xl font-semibold mb-3 text-red-600">
+          <h4 className="text-xl sm:text-2xl font-semibold mb-3 text-red-600 text-center">
             We build assets - not just tools.
           </h4>
            <p className="text-gray-800 text-justify leading-relaxed text-sm sm:text-base group-hover:text-black">
