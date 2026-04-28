@@ -62,7 +62,7 @@ export function Products() {
           </h2>
 
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-            We are building an asset-class product.
+            We are building an asset - class product.
           </p>
         </div>
         <div className="group p-2 sm:p-5 border border-gray-200 rounded-xl hover:border-red-500 transition duration-300 hover:-translate-y-2 hover:shadow-lg max-w-3xl mx-auto">
