@@ -67,7 +67,7 @@ export function Products() {
         </div>
         <div className="group p-2 sm:p-5 border border-gray-200 rounded-xl hover:border-red-500 transition duration-300 hover:-translate-y-2 hover:shadow-lg max-w-3xl mx-auto">
           <h4 className="text-xl sm:text-2xl font-semibold mb-3 text-red-600">
-            We build assets -- not just tools.
+            We build assets - not just tools.
           </h4>
            <p className="text-gray-800 text-justify leading-relaxed text-sm sm:text-base group-hover:text-black">
             In India, tractors are considered asset-class products because farmers can generate income beyond their own use. We are building a product with the same philosophy.
