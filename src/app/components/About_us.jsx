@@ -8,12 +8,10 @@ export function AboutUs() {
 
   return (
     <section className="py-24 bg-gray-50">
-
       {/* ✅ ADD THIS LINE */}
       <ScrollToTop />
 
       <div className="max-w-7xl mx-auto px-4">
-
         {/* HEADER with glow */}
         <div className="text-center mb-20 animate-fadeIn">
           <h2 className="relative inline-block text-4xl md:text-5xl mb-4 font-semibold text-gray-800">
@@ -22,67 +20,71 @@ export function AboutUs() {
           </h2>
 
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Bulldroid is building intelligent agricultural robots to transform 
-            traditional farming into a smart, scalable, and sustainable ecosystem.
+            We come from agricultural family backgrounds. We are solving this
+            for ourselves—and for every farmer.
           </p>
         </div>
 
-      <div className="grid md:grid-cols-2 gap-10">
-
-  {founders.map((founder, index) => (
-    <div
-      key={index}
-      className="group bg-white p-8 rounded-2xl shadow-md border border-gray-200 
+        <div className="grid md:grid-cols-2 gap-10">
+          {founders.map((founder, index) => (
+            <div
+              key={index}
+              className="group bg-white p-8 rounded-2xl shadow-md border border-gray-200 
       hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
-    >
-      <div className="flex flex-col items-center text-center">
-
-        <img
-          src={founder.image}
-          alt={founder.name}
-          className="w-48 h-62 object-cover rounded-xl mb-6 border-4 border-red-100 
+            >
+              <div className="flex flex-col items-center text-center">
+                <img
+                  src={founder.image}
+                  alt={founder.name}
+                  className="w-48 h-62 object-cover rounded-xl mb-6 border-4 border-red-100 
 transition duration-500 group-hover:scale-105"
-        />
+                />
 
-        <h4 className="text-xl font-semibold mb-1">
-          {founder.name}
-        </h4>
+                <h4 className="text-xl font-semibold mb-1">{founder.name}</h4>
 
-        <p className="text-red-600 font-medium mb-4">
-          {founder.role}
-        </p>
+                <p className="text-red-600 font-medium mb-4">{founder.role}</p>
 
-        <div className="text-gray-600 space-y-2 text-sm">
-          <p>{founder.education}</p>
-          <p>{founder.experience}</p>
+                <div className="text-gray-600 space-y-2 text-sm">
+                  <p>{founder.education}</p>
+                  <p>{founder.experience}</p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
-      </div>
-    </div>
-  ))}
-
-</div>
-
         {/* INCUBATION */}
-       <div className="mt-16 bg-white rounded-2xl p-10 shadow-md border border-gray-200 
-  hover:shadow-xl transition-all duration-500">
-
+        <div
+          className="mt-16 bg-white rounded-2xl p-10 shadow-md border border-gray-200 
+  hover:shadow-xl transition-all duration-500"
+        >
           <h3 className="text-3xl font-semibold text-center mb-10 flex items-center justify-center gap-2">
             <Sparkles className="text-red-600" /> Incubation Details
           </h3>
 
           {/* LOGOS */}
           <div className="flex flex-wrap justify-center items-center gap-10 mb-10">
-             <img src="/images/manage.png" className="h-30 object-contain hover:scale-110 transition" />
-              <img src="/images/alagappa.png" className="h-35 object-contain hover:scale-110 transition" />
-              <img src="/images/mkv.png" className="h-30 object-contain hover:scale-110 transition" />
-            <img src="/images/gov.png" className="h-30  object-contain hover:scale-110 transition" />
+            <img
+              src="/images/manage.png"
+              className="h-30 object-contain hover:scale-110 transition"
+            />
+            <img
+              src="/images/alagappa.png"
+              className="h-35 object-contain hover:scale-110 transition"
+            />
+            <img
+              src="/images/mkv.png"
+              className="h-30 object-contain hover:scale-110 transition"
+            />
+            <img
+              src="/images/gov.png"
+              className="h-30  object-contain hover:scale-110 transition"
+            />
           </div>
 
           {/* DESCRIPTION */}
           <p className="text-gray-600 text-justify max-w-4xl mx-auto leading-relaxed mb-12">
             Our startup is proudly incubated under{" "}
-
             <a
               href="https://www.manage.gov.in/managecia/"
               target="_blank"
@@ -95,7 +97,6 @@ transition duration-500 group-hover:scale-105"
               MANAGE-CIA, Hyderabad
             </a>{" "}
             and{" "}
-
             <a
               href="https://accet.ac.in/incubation"
               target="_blank"
@@ -107,10 +108,8 @@ transition duration-500 group-hover:scale-105"
             >
               Alagappa Incubation Forum
             </a>
-            , supported by Government of India innovation ecosystems.{" "}
-
-            We have also been awarded funding under the prestigious{" "}
-
+            , supported by Government of India innovation ecosystems. We have
+            also been awarded funding under the prestigious{" "}
             <a
               href="https://www.manage.gov.in/managecia/RKVYProg.aspx"
               target="_blank"
@@ -122,16 +121,17 @@ transition duration-500 group-hover:scale-105"
             >
               RKVY–RAFTAAR
             </a>{" "}
-            program, recognizing our work as innovative, scalable, and impactful.
+            program, recognizing our work as innovative, scalable, and
+            impactful.
           </p>
 
           {/* INFO CARDS */}
           <div className="grid md:grid-cols-3 gap-6">
-
-            <div className="group p-6 rounded-xl border border-gray-200 
+            <div
+              className="group p-6 rounded-xl border border-gray-200 
               hover:border-red-500 hover:-translate-y-2 hover:shadow-lg transition duration-300 
-              flex items-center justify-center text-center min-h-[120px]">
-              
+              flex items-center justify-center text-center min-h-[120px]"
+            >
               <h4 className="font-semibold mb-2 text-red-600">
                 <a
                   href="https://www.manage.gov.in/managecia/"
@@ -147,10 +147,11 @@ transition duration-500 group-hover:scale-105"
               </h4>
             </div>
 
-            <div className="group p-6 rounded-xl border border-gray-200 
+            <div
+              className="group p-6 rounded-xl border border-gray-200 
               hover:border-red-500 hover:-translate-y-2 hover:shadow-lg transition duration-300 
-              flex items-center justify-center text-center min-h-[120px]">
-              
+              flex items-center justify-center text-center min-h-[120px]"
+            >
               <h4 className="font-semibold mb-2 text-red-600">
                 <a
                   href="https://accet.ac.in/incubation"
@@ -166,10 +167,11 @@ transition duration-500 group-hover:scale-105"
               </h4>
             </div>
 
-            <div className="group p-6 rounded-xl border border-gray-200 
+            <div
+              className="group p-6 rounded-xl border border-gray-200 
               hover:border-red-500 hover:-translate-y-2 hover:shadow-lg transition duration-300 
-              flex items-center justify-center text-center min-h-[120px]">
-
+              flex items-center justify-center text-center min-h-[120px]"
+            >
               <div>
                 <h4 className="font-semibold mb-2 text-red-600">
                   Govt Program
@@ -189,21 +191,18 @@ transition duration-500 group-hover:scale-105"
                   </a>
                 </p>
               </div>
-
             </div>
-
           </div>
         </div>
 
-       {/* CTA SECTION */}
-<div className="text-center mt-20 animate-fadeIn">
-
-  <p className="text-gray-500 mb-6">
+        {/* CTA SECTION */}
+        <div className="text-center mt-20 animate-fadeIn">
+          {/* <p className="text-gray-500 mb-6">
     🚀 Innovating Agriculture with Intelligence — Bulldroid
-  </p>
-  <button
-  onClick={() => navigate("/contact")}
-  className="
+  </p> */}
+          <button
+            onClick={() => navigate("/contact")}
+            className="
     inline-flex items-center gap-2
     px-8 py-4
     bg-red-600 text-white text-lg
@@ -214,13 +213,11 @@ transition duration-500 group-hover:scale-105"
     hover:-translate-y-1
     transition-all duration-300
   "
->
-  Be Part Of What’s Coming
-  <ArrowRight className="w-5 h-5" />
-</button>
-
-</div>
-
+          >
+            Be Part Of What’s Coming
+            <ArrowRight className="w-5 h-5" />
+          </button>
+        </div>
       </div>
     </section>
   );

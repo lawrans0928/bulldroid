@@ -54,13 +54,10 @@ export function Products() {
   return (
     <section className="py-16 sm:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* HEADER */}
         <div className="text-center mb-16 sm:mb-24">
           <h2 className="relative inline-block text-3xl sm:text-4xl md:text-5xl font-semibold mb-6 tracking-tight text-gray-800">
-            <span className="relative z-10">
-              Bulldroid MK-1
-            </span>
+            <span className="relative z-10">Bulldroid MK-1</span>
             <span className="absolute inset-0 bg-red-500/60 blur-xl rounded-lg animate-[pulse_6s_ease-in-out_infinite]"></span>
           </h2>
 
@@ -83,7 +80,9 @@ export function Products() {
             </HoverBox>
 
             <HoverBox title="Physically demanding tasks">
-              Tasks like seed broadcasting, fertilizer spreading, and pesticide spraying must be performed frequently across large farmlands. They are highly labor-intensive.
+              Tasks like seed broadcasting, fertilizer spreading, and pesticide
+              spraying must be performed frequently across large farmlands. They
+              are highly labor-intensive.
             </HoverBox>
 
             <HoverBox title="Reduced Farming Efficiency">
@@ -113,14 +112,14 @@ export function Products() {
               farming operations automatically.
             </HoverBox>
 
-            <HoverBox title="Affordable Automation">
+            <HoverBox title="User-Friendly By Design">
               The robot is designed to be simple, efficient, and affordable so
               farmers can easily adopt modern technology.
             </HoverBox>
             <HoverBox title="We Build Assets-Not Tools">
-              We build asset-class products that generate returns for farmers—not commodities that get replaced.  
+              We build asset-class products that generate returns for
+              farmers—not commodities that get replaced.
             </HoverBox>
- 
 
             <HoverBox title="Modular Design">
               With interchangeable components the robot can perform multiple
@@ -128,11 +127,11 @@ export function Products() {
             </HoverBox>
           </div>
 
-          <div className="group order-2 lg:order-1">
+          <div className="group order-2 lg:order-1 w-full">
             <ImageWithFallback
-              src="https://i.ibb.co/fddcYgt5/prototype-AI-GENRATED-png.png"
-              alt="Agricultural robot"
-              className="rounded-xl shadow-md w-full h-[260px] sm:h-[320px] lg:h-[380px] object-cover transition duration-500 group-hover:scale-[1.04]"
+              src="/videos/agri-robot.mp4"
+              type="video"
+              className="rounded-xl shadow-md w-full max-w-full h-auto aspect-video object-cover transition duration-500 group-hover:scale-[1.04]"
             />
           </div>
         </div>
@@ -150,7 +149,6 @@ export function Products() {
           </div>
 
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 ">
-
             <div className="group p-6 sm:p-8 border border-gray-200 rounded-xl hover:border-red-500 transition duration-300 hover:-translate-y-2 hover:shadow-lg ">
               <h4 className="text-lg sm:text-xl font-semibold mb-4 text-red-600 ">
                 Seed Broadcasting
@@ -175,7 +173,7 @@ export function Products() {
 
             <div className="group p-6 sm:p-8 border border-gray-200 rounded-xl hover:border-red-500 transition duration-300 hover:-translate-y-2 hover:shadow-lg">
               <h4 className="text-lg sm:text-xl font-semibold mb-4 text-red-600">
-                Pesticide Spraying
+                Fertilizer Broadcasting
               </h4>
 
               <p className="text-gray-600 text-justify leading-relaxed text-sm sm:text-base group-hover:text-black">
@@ -195,7 +193,6 @@ export function Products() {
                 data-driven decisions.
               </p>
             </div>
-
           </div>
         </div>
 
@@ -225,14 +222,13 @@ export function Products() {
             />
           </div>
         </div>
-
       </div>
 
       {/* CTA */}
       <div className="text-center mt-20 animate-fadeIn">
-  <button
-    onClick={() => navigate("/about")}
-    className="
+        <button
+          onClick={() => navigate("/about")}
+          className="
       inline-flex items-center gap-2
       px-8 py-4
       bg-red-600 text-white text-lg
@@ -243,12 +239,11 @@ export function Products() {
       hover:-translate-y-1
       transition-all duration-300
     "
-  >
-    Who’s Building This Future ?
-    <ArrowRight className="w-5 h-5" />
-  </button>
-</div>
-
+        >
+          Who’s Building This Future ?
+          <ArrowRight className="w-5 h-5" />
+        </button>
+      </div>
     </section>
   );
 }
