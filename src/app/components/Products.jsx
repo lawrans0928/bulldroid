@@ -62,9 +62,19 @@ export function Products() {
           </h2>
 
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-            We are building an asset-class product.
+            We are building an asset - class product.
           </p>
         </div>
+        <div className="group p-2 sm:p-5 border border-gray-200 rounded-xl hover:border-red-500 transition duration-300 hover:-translate-y-2 hover:shadow-lg max-w-3xl mx-auto">
+          <h4 className="text-xl sm:text-2xl font-semibold mb-3 text-red-600 text-center">
+            We build assets - not just tools.
+          </h4>
+           <p className="text-gray-800 text-justify leading-relaxed text-sm sm:text-base group-hover:text-black">
+            In India, tractors are considered asset-class products because farmers can generate income beyond their own use. We are building a product with the same philosophy.
+            </p>
+              </div>
+              <br />
+              <br />
 
         {/* PROBLEM */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20 sm:mb-28">
