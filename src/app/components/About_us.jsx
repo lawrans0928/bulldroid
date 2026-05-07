@@ -2,7 +2,7 @@ import { Users, Sparkles, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { founders } from "../../constants/founders"; // adjust path if needed
 import ScrollToTop from "./ui/ScrollToTop";
-
+// hello this is test comm
 export function AboutUs() {
   const navigate = useNavigate();
 
