@@ -39,7 +39,7 @@ export function AboutUs() {
                   className="w-48 h-62 object-cover rounded-xl mb-6 border-4 border-red-100 
 transition duration-500 group-hover:scale-105"
                 />
-
+{/* <p>hi new <p/> */}
                 <h4 className="text-xl font-semibold mb-1">{founder.name}</h4>
 
                 <p className="text-red-600 font-medium mb-4">{founder.role}</p>
