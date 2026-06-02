@@ -5,7 +5,7 @@ export const founders = [
     role: "Founder & CEO",
     // education: "Diploma in CSE and B.E in ECE",
     experience: "Former Product Development Engineer at Scrapify Ecotech Pvt Ltd",
-    image: "/founders/aatheswaran.png",
+    image: "/founders/aatheswaran.jpeg",
   },
   {
     name: "Bavan Sree Arun Seelan A",

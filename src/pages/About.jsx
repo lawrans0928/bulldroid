@@ -8,7 +8,6 @@ export default function About(){
     <>
       <Navigation/>
       <AboutUs/>
-      {/* <Stats/> */}
       <Footer/>
     </>
   );
