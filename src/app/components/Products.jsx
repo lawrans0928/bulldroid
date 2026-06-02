@@ -137,21 +137,24 @@ export function Products() {
               agricultural tasks using one intelligent platform.
             </HoverBox>
           </div>
-
-          <div className="group order-2 lg:order-1 w-full">
+          <div className="order-2 lg:order-1 w-full">
             <video
             controls
             preload="metadata"
             playsInline
             poster={logo}
-            className="rounded-xl shadow-md w-full max-w-full h-auto aspect-video object-cover transition duration-500 group-hover:scale-[1.04]"
+            style={{
+              width: "100%",
+              height: "auto",
+              display: "block",
+            }}
+            className="rounded-xl shadow-md"
             >
               <source src="/videos/agri-robot.mp4" type="video/mp4" />
               Your browser does not support the video tag.
               </video>
             </div>
-        </div>
-
+          </div>
         {/* KEY OPERATIONS (UNCHANGED) */}
         <div className="mb-20 sm:mb-28">
           <div className="text-center mb-12 sm:mb-14">
