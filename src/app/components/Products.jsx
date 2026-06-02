@@ -137,13 +137,17 @@ export function Products() {
             </HoverBox>
           </div>
 
-          <div className="group order-2 lg:order-1 w-full">
-            <ImageWithFallback
-              src="/videos/agri-robot.mp4"
-              type="video"
-              className="rounded-xl shadow-md w-full max-w-full h-auto aspect-video object-cover transition duration-500 group-hover:scale-[1.04]"
-            />
-          </div>
+        <div className="group order-2 lg:order-1 w-full">
+  <video
+    controls
+    preload="metadata"
+    playsInline
+    className="rounded-xl shadow-md w-full max-w-full h-auto aspect-video object-cover transition duration-500 group-hover:scale-[1.04]"
+  >
+    <source src="/videos/agri-robot.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
         </div>
 
         {/* KEY OPERATIONS (UNCHANGED) */}
