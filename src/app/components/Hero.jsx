@@ -14,7 +14,7 @@ export function Hero() {
         <img
           src="/website-bgro.png"
           className="w-full h-full object-cover"
-          alt="background"
+          alt="Bulldroid agricultural robot in a farming field"
         />
         <div className="absolute inset-0 bg-black/60" />
       </div>
@@ -53,29 +53,6 @@ export function Hero() {
 
         </div>
       </div>
-
-      {/* Optional Video Popup (Responsive Ready) */}
-      {/* {showVideo && (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
-          <div className="relative w-full max-w-3xl">
-            <button
-              onClick={() => setShowVideo(false)}
-              className="absolute -top-10 right-0 text-white text-2xl"
-            >
-              ✕
-            </button>
-
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube-nocookie.com/embed/jBtZF8CB4HU?start=120"
-              title="Bulldroid Demo"
-              allowFullScreen
-              className="rounded-lg aspect-video"
-            ></iframe>
-          </div>
-        </div>
-      )} */}
     </section>
   );
 }
