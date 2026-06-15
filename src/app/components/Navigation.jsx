@@ -24,8 +24,13 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* LOGO */}
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Bulldroid Logo" className="h-13 w-auto" />
-
+           <img
+           src={logo}
+           alt="Bulldroid Logo"
+           width="52"
+           height="52"
+           className="h-13 w-auto"
+           />
             <div className="leading-tight">
               <p className="text-lg font-bold text-red-500">
                 BULLDROID
@@ -65,6 +70,8 @@ export function Navigation() {
               isMenuOpen ? "bg-red-600 text-white" : "bg-transparent"
             }`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isMenuOpen}
           >
             <Menu className="h-6 w-6" />
           </button>
