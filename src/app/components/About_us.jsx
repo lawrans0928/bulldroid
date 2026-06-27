@@ -77,8 +77,8 @@ transition duration-500 group-hover:scale-105"
               className="h-30 object-contain hover:scale-110 transition"
             />
             <img
-              src="/images/gov.png"
-              className="h-30  object-contain hover:scale-110 transition"
+            src="/images/gov.png"
+            className=" h-16 object-contain hover:scale-110 transition"
             />
           </div>
 
@@ -98,7 +98,7 @@ transition duration-500 group-hover:scale-105"
             </a>{" "}
             and{" "}
             <a
-              href="https://accet.ac.in/incubation"
+              href="https://www.google.com/maps/search/?api=1&query=Alagappa+Incubation+Forum+Karaikudi"
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold text-red-700 inline-block relative inline-block
@@ -124,9 +124,12 @@ transition duration-500 group-hover:scale-105"
             program, recognizing our work as innovative, scalable, and
             impactful.
           </p>
+          <p className="text-gray-600 text-justify max-w-4xl mx-auto leading-relaxed mb-12">
+            We are also recognized as a <span className="font-semibold text-red-700">DPIIT-certified startup</span> under the Startup India initiative.
+            </p>
 
           {/* INFO CARDS */}
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div
               className="group p-6 rounded-xl border border-gray-200 
               hover:border-red-500 hover:-translate-y-2 hover:shadow-lg transition duration-300 
@@ -163,6 +166,26 @@ transition duration-500 group-hover:scale-105"
                   hover:after:scale-x-100 after:origin-left"
                 >
                   Alagappa Incubation Forum
+                </a>
+              </h4>
+            </div>
+
+              <div
+              className="group p-6 rounded-xl border border-gray-200 
+              hover:border-red-500 hover:-translate-y-2 hover:shadow-lg transition duration-300 
+              flex items-center justify-center text-center min-h-[120px]"
+            >
+              <h4 className="font-semibold mb-2 text-red-600">
+                <a
+                 href="/documents/Bulldroid_DPIT.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative inline-block
+                  after:block after:h-[2px] after:bg-red-600 after:scale-x-0 
+                  after:transition-transform after:duration-300 
+                  hover:after:scale-x-100 after:origin-left"
+                >
+                  DPIIT Certificate
                 </a>
               </h4>
             </div>
