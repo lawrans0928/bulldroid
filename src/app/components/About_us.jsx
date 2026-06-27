@@ -122,11 +122,8 @@ transition duration-500 group-hover:scale-105"
               RKVY–RAFTAAR
             </a>{" "}
             program, recognizing our work as innovative, scalable, and
-            impactful.
+            impactful. We are also recognized as a <span className="font-semibold text-red-700">DPIIT-certified startup</span> under the Startup India initiative.
           </p>
-          <p className="text-gray-600 text-justify max-w-4xl mx-auto leading-relaxed mb-12">
-            We are also recognized as a <span className="font-semibold text-red-700">DPIIT-certified startup</span> under the Startup India initiative.
-            </p>
 
           {/* INFO CARDS */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
